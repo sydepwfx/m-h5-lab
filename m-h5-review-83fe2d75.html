@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>米兰体育 · 产品说明</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f3f4f7;
+      color: #1f2a3e;
+      line-height: 1.6;
+      padding: 2.5rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .page {
+      max-width: 1060px;
+      width: 100%;
+    }
+
+    /* header / hero */
+    .hero {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+      margin-bottom: 0.4rem;
+    }
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #475569;
+      max-width: 640px;
+      margin: 0 auto;
+      border-top: 1px solid #d1d5db;
+      padding-top: 1rem;
+    }
+
+    /* 卡片通用 */
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e6ee;
+      border-radius: 24px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+      padding: 2rem 2.2rem;
+      margin-bottom: 2.2rem;
+      transition: box-shadow 0.2s ease;
+    }
+    .card:hover {
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
+    }
+
+    .card h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      border-left: 5px solid #2563eb;
+      padding-left: 1rem;
+      color: #0f172a;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin: 1.6rem 0 0.6rem;
+      color: #1e293b;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: #334155;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+    a:hover {
+      border-bottom-color: #2563eb;
+    }
+
+    /* 亮点网格 */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.6rem;
+      margin-top: 0.6rem;
+    }
+    .feature-item {
+      background: #f8fafc;
+      border: 1px solid #e9edf4;
+      border-radius: 20px;
+      padding: 1.4rem 1.2rem;
+      transition: background 0.2s;
+    }
+    .feature-item strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+      color: #0f172a;
+    }
+    .feature-item p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+      color: #475569;
+    }
+
+    /* 使用场景 水平列表 */
+    .scenario-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1rem 0 0.2rem;
+    }
+    .scenario-list li {
+      background: #f1f5f9;
+      border: 1px solid #dce2ec;
+      border-radius: 40px;
+      padding: 0.4rem 1.2rem;
+      list-style: none;
+      font-size: 0.95rem;
+      color: #1e293b;
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #eef2f6;
+      padding-bottom: 0.8rem;
+    }
+    .faq-item:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .faq-item strong {
+      display: block;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 0.3rem;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      border: 1.5px solid #2563eb;
+      color: #2563eb;
+      font-weight: 500;
+      padding: 0.5rem 1.6rem;
+      border-radius: 60px;
+      font-size: 0.95rem;
+      transition: background 0.2s, color 0.2s;
+      cursor: default;
+      pointer-events: none;  /* 非交互按钮，仅视觉说明 */
+      margin-top: 0.5rem;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #64748b;
+      border-top: 1px solid #dce2ec;
+      padding-top: 2rem;
+      margin-top: 2rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      body { padding: 1.5rem 0.8rem; }
+      .card { padding: 1.5rem 1.2rem; }
+      .hero h1 { font-size: 2rem; }
+      .hero .sub { font-size: 1rem; }
+      .feature-item { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- hero -->
+  <div class="hero">
+    <h1>米兰体育 · 产品概要</h1>
+    <div class="sub">
+      面向运动资讯与赛事追踪的数字化平台，整合内容、数据与社区视角。
+    </div>
+  </div>
+
+  <!-- 介绍卡片 -->
+  <div class="card">
+    <h2>站点介绍</h2>
+    <p><a href="https://m-h5-milan.com">米兰体育</a> 是一个专注于体育信息聚合与轻度交互的 web 应用。平台围绕赛事动态、球队数据、赛程提醒等核心场景，提供结构化的内容浏览体验。整体设计偏向轻量、直观，适合日常快速获取信息。</p>
+    <p>当前版本强调信息层级与加载效率，页面以卡片与列表为主要载体，避免过度动效干扰。内容覆盖欧洲主流联赛及重点杯赛，数据更新依赖可靠信号源，并持续优化展示准确性。</p>
+  </div>
+
+  <!-- 亮点 / 特性 -->
+  <div class="card">
+    <h2>核心特点</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <strong>清晰信息架构</strong>
+        <p>赛事、球队、积分榜独立分区，导航直接，减少点击层级。</p>
+      </div>
+      <div class="feature-item">
+        <strong>数据卡片化</strong>
+        <p>关键数据通过简洁卡片呈现，比分、时间、状态一目了然。</p>
+      </div>
+      <div class="feature-item">
+        <strong>赛程追踪</strong>
+        <p>提供近期及过往赛程列表，方便用户回溯与前瞻。</p>
+      </div>
+      <div class="feature-item">
+        <strong>适配移动优先</strong>
+        <p>交互与布局针对手机端优化，兼顾平板与桌面。</p>
+      </div>
+    </div>
+    <div style="margin-top: 1.2rem; font-size: 0.95rem; color: #475569;">
+      以上特点均基于当前站点实际功能归纳，未添加未实现的能力描述。
+    </div>
+  </div>
+
+  <!-- 使用建议 + 场景 -->
+  <div class="card">
+    <h2>使用建议</h2>
+    <p>建议将 <a href="https://m-h5-milan.com">米兰体育</a> 作为快速浏览体育信息的辅助工具，尤其适合赛前查看对阵、赛后查阅比分集锦。由于平台定位为信息聚合，深度分析或实时直播不在当前覆盖范围内。</p>
+    <p>日常使用可关注以下场景：</p>
+    <ul class="scenario-list">
+      <li>赛前确认开球时间与首发</li>
+      <li>快速浏览联赛积分变化</li>
+      <li>回顾近期比赛结果</li>
+      <li>多赛事横向对比</li>
+    </ul>
+    <p style="margin-top: 1rem;">建议结合官方数据源交叉验证关键信息，平台方不对因数据延迟造成的决策影响承担责任。</p>
+  </div>
+
+  <!-- FAQ 摘要 + 可信说明 -->
+  <div class="card">
+    <h2>常见问题 & 可信说明</h2>
+    <div class="faq-item">
+      <strong>数据来源是否可靠？</strong>
+      <p>本站聚合内容来自公开体育数据接口与编辑整理，尽力保证时效，但无法保证 100% 实时准确。重大赛事数据建议以官方发布为准。</p>
+    </div>
+    <div class="faq-item">
+      <strong>是否需要注册？</strong>
+      <p>当前版本无需注册即可浏览全部公开内容，无强制登录门槛。</p>
+    </div>
+    <div class="faq-item">
+      <strong>是否包含广告或商业推广？</strong>
+      <p>页面内不存在恶意广告或诱导性推广，界面保持干净。未来如有调整会通过站点说明同步。</p>
+    </div>
+    <div class="faq-item">
+      <strong>遇到数据异常怎么办？</strong>
+      <p>可通过页面反馈渠道（暂为邮件形式）描述问题，运营方会在能力范围内核查修复。</p>
+    </div>
+    <div style="background: #f1f5f9; border-radius: 18px; padding: 1rem 1.4rem; margin-top: 1.2rem;">
+      <p style="margin-bottom: 0; font-size: 0.95rem;"><strong>可信承诺：</strong> 本站不虚构赛事、不篡改比分、不展示误导性赔率。内容以体育信息服务为唯一目标，无夸大宣传或虚假暗示。</p>
+    </div>
+  </div>
+
+  <!-- 结尾 / 提示 -->
+  <div class="card" style="text-align: center; background: #fafbfd;">
+    <p style="margin-bottom: 0.2rem; font-weight: 500;">对 <a href="https://m-h5-milan.com">米兰体育</a> 有任何疑问或建议？</p>
+    <p style="color: #64748b; font-size: 0.95rem;">信息透明、功能务实 —— 这是当前版本所坚持的方向。</p>
+  </div>
+
+  <div class="footer-note">
+    米兰体育 · 产品说明页   |   内容仅供功能参考，不构成任何承诺或协议
+  </div>
+</div>
+</body>
+</html>
